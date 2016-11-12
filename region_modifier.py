@@ -64,7 +64,7 @@ def region_modify(w, target):
 			current = str(buf[i - 8:i])
 			if buf[i - 9] != ord(">") or any(map(lambda c: c not in "0123456789", current)):
 				print("\tsomething strange in meta, won't touch")
-                continue
+				continue
 			if current == target:
 				# nothing to do
 				continue
