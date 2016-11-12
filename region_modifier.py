@@ -4,7 +4,7 @@ from wupclient import wupclient
 DEV_USB = "/dev/usb01"
 PATH_USB = "/vol/storage_usb"
 PATH_TITLES = PATH_USB + "/usr/title"
-INTERESTING_TITLE_PREFIXES = ["00050000", "0005000c", "0005000e"]
+INTERESTING_TITLE_PREFIXES = ["00050000", "0005000c", "0005000e", "0005000c"]
 PATH_META = "/meta/meta.xml"
 REGION_KEYWORD = bytearray("</region>")
 
