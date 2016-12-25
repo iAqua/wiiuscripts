@@ -2,24 +2,24 @@ from wupclient import wupclient
 
 # constants
 DEV_USB = "/dev/usb01"
-PATH_USB = "/vol/storage_usb"
-PATH_TITLES = PATH_USB + "/usr/title"
-INTERESTING_TITLE_PREFIXES = ["00050000", "0005000c", "0005000e"]
+LOCATION_USB = "/vol/storage_usb"
+PATH_TITLES = LOCATION_USB + "/usr/title"
+INTERESTING_TITLE_PREFIXES = ["00050000", "0005000c", "0005000e", "00050002,"]
 PATH_META = "/meta/meta.xml"
 REGION_KEYWORD = bytearray("</region>")
 
 def mount_usb(w):
-	if w.cd(PATH_USB):
+	if w.cd(LOCATION_USB):
 		print("mounting usb")
 		f = w.get_fsa_handle()
-		w.FSA_Mount(f, DEV_USB, PATH_USB, 2)
+		w.FSA_Mount(f, DEV_USB, LOCATION_USB, 2)
 	else:
 		print("usb is already mounted")
 
 def unmount_usb(w):
 	print "unmounting usb"
 	f = w.get_fsa_handle()
-	w.FSA_Unmount(f, PATH_USB, 2)
+	w.FSA_Unmount(f, LOCATION_USB, 2)
 
 def clean(w):
 	if w.fsa_handle:
