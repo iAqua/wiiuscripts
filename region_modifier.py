@@ -1,6 +1,6 @@
 from wupclient import wupclient
 
-# constants
+# define constants
 DEV_USB = "/dev/usb01"
 LOCATION_USB = "/vol/storage_usb"
 PATH_TITLES = LOCATION_USB + "/usr/title"
